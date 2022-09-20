@@ -1,1 +1,19 @@
-sidebar
+<div class="sidebar">
+    <nav class="navbar">
+        <ul class="nav-menu vertical">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ site.baseurl }}">Home</a>
+            </li>
+            <!-- {% assign pages_list = site.pages %} -->
+            {% for node in site.pages %}
+                {% if node.title != null %}
+                    <!-- {% if node.layout == "page" %} -->
+                        <li>
+                            <a class="nav-link {% if page.url == node.url %} active{% endif %}" href="{{ node.url | absolute_url }}">{{ node.title }}</a>
+                        </li>
+                    <!-- {% endif %} -->
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+</div>

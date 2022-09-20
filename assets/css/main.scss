@@ -1,6 +1,10 @@
 ---
 ---
 
+ul, li {
+    list-style: none;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,5 +17,54 @@ html, body {
 }
 
 body {
+    display: grid;
+    grid-template-areas:
+    "sidebar content"
+    "footer footer";
+    grid-template-rows: 1fr auto;
+    grid-template-columns: auto 1fr;
+}
 
+footer.footer {
+    grid-area: footer;
+    padding: 0.5rem;
+
+}
+
+main.content {
+    grid-area: content;
+    // background-color: rgb(141, 217, 137);
+    padding: 1rem;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    padding: 1rem;
+    width: 250px;
+    background-color: deepskyblue;
+}
+
+.navbar {
+    
+}
+
+.nav-menu {
+    display: flex;
+    gap: 0.1rem;
+
+    &.vertical {
+        flex-direction: column;
+    }
+}
+
+.nav-item {
+
+}
+
+.nav-link {
+    text-decoration: none;
+
+    &.active {
+
+    }
 }
